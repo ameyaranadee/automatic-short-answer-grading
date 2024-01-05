@@ -28,18 +28,22 @@ Packages used in this project can be installed with the following command:
 
 ## Experimentation
 
-Preprocessing
-1. Tokenization is applied on both student answer and reference answers
-2. Lemmatization and stopword removal are neglected consciously, to assess the performance of the transfer learning models
-3. spell checker is also neglected, assuming that the graders had deducted the scores for misspelled words
+### Preprocessing
+1. Text normalization includes converting text to lowercase, removing non-alphanumeric characters, tokenizing, and filtering out stopwords.
+2. Creating a correct word pool by parsing through a collection of texts, excluding words shorter than two characters.
+3. Identification of potentially incorrect words by comparing against WordNet and using a spellchecker.
+4. Mapping potentially incorrect words to their potential correct counterparts:
+5. Utilizing Levenshtein and fuzzy matching ratios for potential matches.
+6. Refine the word mapping pool by spellchecking, word splitting, and checking against word pools.
+7. Replacement of identified incorrect words in the DataFrame column with their potential correct versions based on the generated dictionary.
 
-Feature Extraction
+### Feature Extraction
 1. Generate Sum Of the Word Embeddings (SOWE) for all the answers in the dataset when calculating the cosine similarity.
 2. These embeddings are created using the Baroni embeddings.
 3. We generate features for each student answer by calculating cosine similarities between the reference answer and every student answer. The features are cosine similarity, alignment score, length ratio, eucledian distance, fuzzy features. You can find the detailed code for feature extraction in `feature_extraction.py`.
 5. We use these features for training the regression models.
 
-Training and Testing
+### Training and Testing
 1. We split the Mohler data into 75%-25% training and testing data.
 2. We use the training data to train on regression models namely, Random Forest Regressor, Ridge regression and a Neural Network.
 3. We use these trained models, to predict the grades of test data and generate the results.
