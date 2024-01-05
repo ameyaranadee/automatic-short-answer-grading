@@ -2,7 +2,7 @@
 
 This code is a Automatic Short Answer Grading (ASAG) system on the Mohler (Texas) dataset.
 
-# Mohler Dataset
+## Mohler Dataset
 
 `data/` contains two files in csv format:
 
@@ -19,12 +19,12 @@ We consider their average as the gold standard score.
 
 QA1.csv consists of just the questions and the model answers, thus containing lesser entries.
 
-# Install Packages
+## Install Packages
 
 Packages used in this project can be installed with the following command:
 `pip install -r requirements.txt`
 
-# Experimentation
+## Experimentation
 
 Preprocessing
 1. Tokenization is applied on both student answer and reference answers
@@ -42,14 +42,14 @@ Training and Testing
 2. We use the training data to train on regression models namely, Random Forest Regressor, Ridge regression and a Neural Network.
 3. We use these trained models, to predict the grades of test data and generate the results.
 
-# Training model
+## Training model
 
 To train the model, you first need to download the embeddings of Baroni so that they can be used for feature extraction.
 
-# Download Baroni embeddings
+## Download Baroni embeddings
 Please download the Baroni embeddings [here](https://osf.io/489he/wiki/dcp_cbow/) and put them in `/data`.
 
-# Run Training
+## Run Training
 
 To run training, run:
 
