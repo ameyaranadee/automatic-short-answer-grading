@@ -1,0 +1,11 @@
+matplotlib
+seaborn
+pandas
+numpy==1.23.5
+nltk
+pyspellchecker
+fuzzywuzzy
+python-Levenshtein
+pyenchant
+wordninja
+autocorrect
