@@ -59,4 +59,4 @@ Please download the Baroni embeddings [here](https://osf.io/489he/wiki/dcp_cbow/
 
 To run training, run:
 
-`bash scripts/main.sh`
+`bash main.sh`
