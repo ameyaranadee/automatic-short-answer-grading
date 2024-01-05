@@ -16,8 +16,7 @@ data/
 ```
 
 Data.csv consists of a total of 2442 student answers as a response to around 87 computer science questions collected over a period of 10 assignments and 2 tests.
-The scoring is continuous over a range of 0-5 and every answer is graded by two human evaluators. The scores are graded from 0(not correct) to 5(totally correct). The grades are allocated by two evaluators. 
-We consider their average as the gold standard score.
+The scoring is continuous over a range of 0-5 and every answer is graded by two human evaluators. We consider their average as the gold standard score.
 
 QA1.csv consists of just the questions and the model answers, thus containing lesser entries.
 
