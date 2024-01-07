@@ -6,19 +6,22 @@ This code is a Automatic Short Answer Grading (ASAG) system on the Mohler (Texas
 
 `data/` contains two files in csv format:
 
-```
-data/
-    # (2442 entries)
-    Data.csv`
-
-    # (87 entries)
-    QA1.csv
-```
-
 Data.csv consists of a total of 2442 student answers as a response to around 87 computer science questions collected over a period of 10 assignments and 2 tests.
 The scoring is continuous over a range of 0-5 and every answer is graded by two human evaluators. We consider their average as the gold standard score.
 
 QA1.csv consists of just the questions and the model answers, thus containing lesser entries.
+
+## Download embeddings
+Download the Baroni embeddings [here](https://osf.io/489he/wiki/dcp_cbow/) and extract them into the `./data/` directory. 
+
+Afterwards the `./data/` directory should look like:
+
+```
+data/
+    Data.csv
+    QA1.csv
+    EN-wform.w.5.cbow.neg10.400.subsmpl.txt
+```
 
 ## Install Packages
 
@@ -51,11 +54,12 @@ Packages used in this project can be installed with the following command:
 
 To train the model, you first need to download the embeddings of Baroni so that they can be used for feature extraction.
 
-## Download Baroni embeddings
-Please download the Baroni embeddings [here](https://osf.io/489he/wiki/dcp_cbow/) and put them in `/data`.
-
 ## Run Training
 
 To run training, run:
 
 `bash main.sh`
+
+## References
+<a id="1">[1]</a> 
+[Don’t count, predict! A systematic comparison of context-counting vs. context-predicting semantic vectors](https://aclanthology.org/P14-1023) (Baroni et al., ACL 2014)
